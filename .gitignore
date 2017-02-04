@@ -216,3 +216,4 @@ pip-log.txt
 .mr.developer.cfg
 HelloWorld/VS2015/HelloWorld/HelloWorld.VC.db
 *.opendb
+*.db
