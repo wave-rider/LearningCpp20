@@ -16,6 +16,7 @@ class MyClass
 {
 public:
     int x;
+	MyClass();
 };
 
 #endif /* MyClass_hpp */

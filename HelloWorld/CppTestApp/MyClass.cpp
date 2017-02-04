@@ -7,3 +7,8 @@
 //
 
 #include "MyClass.hpp"
+
+MyClass::MyClass()
+{
+	x = 0;
+}
