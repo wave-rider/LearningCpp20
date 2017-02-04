@@ -22,8 +22,9 @@ int main(int argc, const char * argv[]) {
     
     MyClass& f = c;
     f.x=20;
-    f = m;
+    f = m; // In the debug build this line will produce an error in VS 2015
     cout << "MyClass:f!\n" << f.x;
-    
+	char a;
+	cin >> a;
     return 0;
 }
