@@ -8,7 +8,12 @@
 
 #include "MyClass.hpp"
 
-MyClass::MyClass()
+MyClass::MyClass(): PicaReference{Picachu("test", 101)}
+{
+	
+}
+
+MyClass::MyClass(Picachu& picaReference, Picachu* picaPointer) : PicaReference{picaReference}, PicaPointer{picaPointer}
 {
 	x = 0;
 }
