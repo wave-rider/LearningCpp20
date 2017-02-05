@@ -17,10 +17,9 @@ class MyClass
 {
 public:
     int x;
-	Picachu& PicaReference;
+	const Picachu& PicaReference;
 	Picachu* PicaPointer;
-	MyClass::MyClass();
-	MyClass(Picachu& picaReference, Picachu* picaPointer);
+	MyClass(const Picachu& picaReference, Picachu* picaPointer);
 };
 
 #endif /* MyClass_hpp */

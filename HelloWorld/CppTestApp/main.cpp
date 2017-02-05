@@ -13,11 +13,11 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     cout << "Hello, World!\n";
 	Picachu* cPicaPointer = new Picachu("cPicaPointer", 1);
-	Picachu& cPicaReference = Picachu("cPicaReference", 2);
+	const Picachu& cPicaReference = Picachu("cPicaReference", 2);
 	MyClass c(cPicaReference, cPicaPointer);
 	
 	Picachu* mPicaPointer = new Picachu("mPicaPointer", 3);
-	Picachu& mPicaReference = Picachu("mPicaReference", 4);
+	const Picachu& mPicaReference = Picachu("mPicaReference", 4);
 	MyClass m(mPicaReference, mPicaPointer);
 	
 	c.x = 10;

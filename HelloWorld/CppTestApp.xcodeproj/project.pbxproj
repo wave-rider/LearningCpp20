@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EC0486C1E478F2F00E1E43F /* Picachu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0486A1E478F2F00E1E43F /* Picachu.cpp */; };
 		84200CEB1E448A4E00B7C693 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84200CEA1E448A4E00B7C693 /* main.cpp */; };
 		84200CF31E448AA700B7C693 /* MyClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84200CF11E448AA700B7C693 /* MyClass.cpp */; };
 		84200CF61E448F7000B7C693 /* MySecondClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84200CF41E448F7000B7C693 /* MySecondClass.cpp */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5EC0486A1E478F2F00E1E43F /* Picachu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Picachu.cpp; sourceTree = "<group>"; };
+		5EC0486B1E478F2F00E1E43F /* Picachu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Picachu.hpp; sourceTree = "<group>"; };
 		84200CE71E448A4E00B7C693 /* CppTestApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CppTestApp; sourceTree = BUILT_PRODUCTS_DIR; };
 		84200CEA1E448A4E00B7C693 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		84200CF11E448AA700B7C693 /* MyClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyClass.cpp; sourceTree = "<group>"; };
@@ -63,6 +66,8 @@
 		84200CE91E448A4E00B7C693 /* CppTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				5EC0486A1E478F2F00E1E43F /* Picachu.cpp */,
+				5EC0486B1E478F2F00E1E43F /* Picachu.hpp */,
 				84200CEA1E448A4E00B7C693 /* main.cpp */,
 				84200CF11E448AA700B7C693 /* MyClass.cpp */,
 				84200CF21E448AA700B7C693 /* MyClass.hpp */,
@@ -130,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84200CF31E448AA700B7C693 /* MyClass.cpp in Sources */,
+				5EC0486C1E478F2F00E1E43F /* Picachu.cpp in Sources */,
 				84200CF61E448F7000B7C693 /* MySecondClass.cpp in Sources */,
 				84200CEB1E448A4E00B7C693 /* main.cpp in Sources */,
 			);
@@ -228,6 +234,7 @@
 		84200CEF1E448A4E00B7C693 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -235,6 +242,7 @@
 		84200CF01E448A4E00B7C693 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -258,6 +266,7 @@
 				84200CF01E448A4E00B7C693 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
