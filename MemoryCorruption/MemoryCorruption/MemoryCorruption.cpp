@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	char  *inputName = new char; //Wrong
+	//char  *inputName = new char; //Wrong
 	char  *inputName = new char[2];//Correct if an input is one character
 	cin >> inputName;
 	delete inputName;
