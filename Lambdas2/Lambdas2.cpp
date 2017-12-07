@@ -21,7 +21,7 @@ void print_modulo(const vector<int>& v, ostream& os, int m)
 
 int main()
 {
-	vector<int> counts = { 1,2,4,56,44 };
+	vector<int> counts = { 1, 2, 4, 56,44 };
 	print_modulo(counts, cout, 2);
     return 0;
 }

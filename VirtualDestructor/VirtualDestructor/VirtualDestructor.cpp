@@ -7,14 +7,16 @@
 class Shape {
 public:
 	virtual void draw() = 0;
-	virtual ~Shape() { std::cout << "Shape destructor is called"; } 
+	virtual ~Shape() { 
+		std::cout << "Shape destructor is called" << std::endl; 
+	} 
 };
 
 class Circle : public Shape {
 public:
 	void draw() {}
 	~Circle() { 
-		std::cout << "Circle destructor is called";
+		std::cout << "Circle destructor is called" << std::endl;
 	}
 };
 
