@@ -217,3 +217,5 @@ pip-log.txt
 HelloWorld/VS2015/HelloWorld/HelloWorld.VC.db
 *.opendb
 *.db
+packages
+.vs
