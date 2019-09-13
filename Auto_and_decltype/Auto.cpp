@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <type_traits>
 #include <fstream>
+#include <typeinfo>
 
 using namespace std;
 
@@ -49,10 +50,24 @@ auto multiply(X x, Y y) -> decltype(x * y)
 
 int main()
 {
-	auto a = 1, b = 2;
-	auto i = 1, *ptr = &a, &ref = b;
-	b = 111;
-	cout << ref << endl;
+	auto a = 1;
+	auto* ptr = &a;
+	cout << "======= auto ========" << endl;
+	cout << "auto a = 1;" << endl;
+	cout << "auto* ptr = &a;" << endl;
+	cout << "ptr ===> " << ptr << endl;
+	cout << "*ptr ===> " << *ptr << endl;
+	cout << "typeid(ptr).name() ===> " << typeid(ptr).name() << endl;
+	cout << "typeid(*ptr).name() ===> " << typeid(*ptr).name() << endl << endl;
+
+	auto b = 2;
+	auto &ref = b;
+	cout << "auto b = 2;" << endl;
+	cout << "auto &ref = b;" << endl;
+	cout << "ref ==> " << ref << endl;
+	cout << "&ref ==> " << &ref << endl;
+	cout << "typeid(ref).name() ===> " << typeid(ref).name() << endl;
+	cout << "typeid(&ref).name() ===> " << typeid(&ref).name() << endl << endl;
 	
 	volatile long clock = 0;
 	auto c = clock;		// c is not volatile
@@ -97,4 +112,3 @@ int main()
 	
 	return 0;
 }
-
