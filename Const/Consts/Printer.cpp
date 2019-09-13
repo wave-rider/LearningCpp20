@@ -14,7 +14,7 @@ Printer::~Printer()
 
 int Printer::print() const
 {
-	x = 20; // This line will produce an error becuase print is const.
+	//x = 20; // This line will produce an error because print is const.
 	cout << "print....";
 	return 0;
 }
