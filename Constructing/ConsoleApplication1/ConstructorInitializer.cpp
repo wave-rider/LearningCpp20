@@ -5,12 +5,12 @@
 #include "ConstructorInitializer.h"
 
 ConstructorInitializer::ConstructorInitializer(std::initializer_list<int> initList){
-	intValue = 1;
 	std::cout << "Std:initializer_list constructor " << std::endl;
 
 	std::cout << "Passed values:" << std::endl;
 	for (auto i : initList){
 		std::cout << i << " ";
+		intValue = i;
 	}
 
 	std::cout << std::endl;
@@ -18,7 +18,7 @@ ConstructorInitializer::ConstructorInitializer(std::initializer_list<int> initLi
 
 ConstructorInitializer::ConstructorInitializer(){
 	intValue = -1;
-	std::cout << "This is a default constructor with no parameters" << std::endl;
+	std::cout << "This is a default constructor with no parameters intValue="<< intValue << std::endl;
 }
 
 /* Don't do this in C++
@@ -29,7 +29,7 @@ ConstructorInitializer::ConstructorInitializer(int passedValue) {
 */
 
 ConstructorInitializer::ConstructorInitializer(int passedValue) : intValue{passedValue}{
-	std::cout << "This is a constructor with one parameter" << std::endl;
+	std::cout << "This is a constructor with one parameter intValue=" << intValue << std::endl;
 }
 
 ConstructorInitializer::~ConstructorInitializer()

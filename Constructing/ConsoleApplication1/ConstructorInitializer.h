@@ -9,6 +9,6 @@ public:
 	ConstructorInitializer(int);
 	virtual ~ConstructorInitializer();
 private:
-	int intValue;
+	int intValue = 7;
 };
 
