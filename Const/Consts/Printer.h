@@ -5,7 +5,8 @@ public:
 	Printer();
 	~Printer();
 	int print() const;
-private:
+	void set_x(int value);
+	int get_x();
 	int x;
 };
 
