@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Alignof", "Alignof\Alignof.vcxproj", "{FF8F900B-2675-4599-90EE-514DE7250C50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF8F900B-2675-4599-90EE-514DE7250C50}.Debug|x64.ActiveCfg = Debug|x64
+		{FF8F900B-2675-4599-90EE-514DE7250C50}.Debug|x64.Build.0 = Debug|x64
+		{FF8F900B-2675-4599-90EE-514DE7250C50}.Debug|x86.ActiveCfg = Debug|Win32
+		{FF8F900B-2675-4599-90EE-514DE7250C50}.Debug|x86.Build.0 = Debug|Win32
+		{FF8F900B-2675-4599-90EE-514DE7250C50}.Release|x64.ActiveCfg = Release|x64
+		{FF8F900B-2675-4599-90EE-514DE7250C50}.Release|x64.Build.0 = Release|x64
+		{FF8F900B-2675-4599-90EE-514DE7250C50}.Release|x86.ActiveCfg = Release|Win32
+		{FF8F900B-2675-4599-90EE-514DE7250C50}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDA89B4D-A2F1-42C9-BFB2-94655471F8E3}
+	EndGlobalSection
+EndGlobal
