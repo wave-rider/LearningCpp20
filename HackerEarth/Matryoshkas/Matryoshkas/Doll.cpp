@@ -23,7 +23,7 @@
 	int Doll::availableDollSize()
 	{
 		if (nestedDoll != nullptr) {
-			return nestedDoll->availableDollSize();
+			return nestedDoll->dollSize;
 		}
 		return dollSize;
 	}

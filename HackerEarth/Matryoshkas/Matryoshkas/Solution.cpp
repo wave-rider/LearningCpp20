@@ -1,3 +1,4 @@
+#include "..\StaticLib1\pch.h"
 #include "Solution.h"
 #include "Doll.h"
 
