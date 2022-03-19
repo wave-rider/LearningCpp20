@@ -56,21 +56,21 @@ public:
     //...
 };
 
-Box2::Box2(initializer_list<string> list, int w = 0, int h = 0, int l = 0)
-    : m_contents(list), m_width(w), m_height(h), m_length(l)
-{}
+//Box2::Box2(initializer_list<string> list, int w = 0, int h = 0, int l = 0)
+//    : m_contents(list), m_width(w), m_height(h), m_length(l)
+//{}
 
-class ShippingOrder
-{
-public:
-    ShippingOrder(Box b, double postage) : m_box(b), m_postage(postage) {}
-
-private:
-    Box m_box;
-    double m_postage;
-}
-//elsewhere...
-ShippingOrder so(42, 10.8);
+//class ShippingOrder
+//{
+//public:
+//    ShippingOrder(Box b, double postage) : m_box(b), m_postage(postage) {}
+//
+//private:
+//    Box m_box;
+//    double m_postage;
+//}
+////elsewhere...
+//ShippingOrder so(42, 10.8);
 
 void func(char* p)
 {
@@ -100,6 +100,29 @@ int main()
     //cpc = s; // error : cpc is constant
     func(s);
 
-    MyClass* classA = new MyClass(7, 8);
-    std::cout << classA->GetA();
+ /*   MyClass* classA = new MyClass(7, 8);
+    std::cout << classA->GetA();*/
+    int aa[10];
+    aa[6] = 9; // assign to aa’s 7th element
+    int x = aa[99]; // undefined behavior
+    cout << x;
+    cout << "sizeof(\"Bohr\")" << sizeof("Bohr") << "strlen(\"Bohr\"):" << strlen("Bohr");
+
+    //char∗ p = "Plato"; // error, but accepted in pre-C++11-standard code
+    //p[4] = 'e'; // error : assignment to const
+
+    char m[] = "Zeno"; // p is an array of 5 char
+    m[0] = 'R'; // OK
+
+    const char* p = "Heraclitus";
+    const char* q = "Heraclitus";
+    
+    if (p == q) cout << "one!\n"; // the result is implementation-defined
+    else std::cout << "Another one!\n";
+    
+    char alpha[] = "abcdefghijklmnopqrstuvwxyz\n"
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    std::cout << alpha;
 }
+

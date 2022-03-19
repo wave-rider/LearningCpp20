@@ -31,6 +31,13 @@ int main()
 	static Work here; // "", "", 0
 	Work* freeStore = new Work; //"", "", unknown
 
+	// For Stroustrup Chapter 6.
+	unsigned char c1 = 64; // well defined: a char has at least 8 bits and can always hold 64
+	unsigned char c2 = 1256; // implementation-defined: truncation if a char has only 8 bits
+	cout << "unsigned char size:" << sizeof(unsigned char) << endl;
+	cout << "Result:" << c1 << ' ' << c2;
+	
+
 	return 0;
 }
 
