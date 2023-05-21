@@ -219,3 +219,4 @@ HelloWorld/VS2015/HelloWorld/HelloWorld.VC.db
 *.db
 packages
 .vs
+/*/*.exe
