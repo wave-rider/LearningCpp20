@@ -12,19 +12,35 @@
 
 #include <iostream>
 #include <type_traits>
+#include <optional>
 
 class B
 {
-  std::string s;
+  public:
+  int u;//std::string s;
+  std::optional<int> test;
+  B() = default;
+  B(const B&) = default;
+  B(B&&)  = default;
 };
 
 int main()
 {
   std::cout << std::boolalpha;
-  std::cout << std::is_nothrow_default_constructible<B>::value << '\n';
-  std::cout << std::is_nothrow_copy_constructible<B>::value << '\n';
-  std::cout << std::is_nothrow_move_constructible<B>::value << '\n';
-  std::cout << std::is_nothrow_copy_assignable<B>::value << '\n';
-  std::cout << std::is_nothrow_move_assignable<B>::value << '\n';
+  std::cout << "1:" <<std::is_nothrow_default_constructible<B>::value << '\n';
+  std::cout << "2:" <<std::is_nothrow_copy_constructible<B>::value << '\n';
+  std::cout << "3:" <<std::is_nothrow_move_constructible<B>::value << '\n';
+  std::cout << "4:"  <<std::is_nothrow_copy_assignable<B>::value << '\n';
+  std::cout << "5:" <<std::is_nothrow_move_assignable<B>::value << '\n';
+  B test;
+  test.test = 89;
 }
 
+// This will make all lines in the output to be true
+// However changing the class definition to std::string will
+// produce the output as from the book
+// true
+//false
+//true
+//false
+//true
