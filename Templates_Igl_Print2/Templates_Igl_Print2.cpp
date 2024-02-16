@@ -9,7 +9,7 @@ constexpr size_t dimensionof(T(&array)[N])
 }
 
 // void print(std::ostream& os)
-// { } // C++11
+// { } // C++11 (1)
 
 // template< typename T, typename... Ts> // Variadic Template Parameter
 // void print(std::ostream& os, T const& value, Ts const&... values) //Parameter Pack
@@ -18,17 +18,29 @@ constexpr size_t dimensionof(T(&array)[N])
 //     print(os, values...); // Tail recursion (c++11)
 // }
 
+///////////////////////////////////
+// void print(std::ostream& os)
+// { } // C++17 (2)
 
+// template< typename T, typename... Ts> // Variadic Template Parameter
+// void print(std::ostream& os, T const& value, Ts const&... values) //Parameter Pack
+// {
+//     os << " " << value;
+//     if constexpr(sizeof...(Ts) > 0U ){
+//         print(os, values...); // Tail recursion (c++17)
+//     }
+// }
+
+
+//////////////////////////////////
 void print(std::ostream& os)
-{ } // C++17
-
+{ } // C++17 (2)
 template< typename T, typename... Ts> // Variadic Template Parameter
 void print(std::ostream& os, T const& value, Ts const&... values) //Parameter Pack
 {
-    os << " " << value;
-    if constexpr(sizeof...(Ts) > 0U ){
-        print(os, values...); // Tail recursion (c++17)
-    }
+    os << ' '  << value;
+
+    (void)(os << ... << values ); //Fold expressions; C++17
 }
 
 #include <iostream>
