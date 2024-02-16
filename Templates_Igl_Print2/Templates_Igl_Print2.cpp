@@ -8,19 +8,34 @@ constexpr size_t dimensionof(T(&array)[N])
     return N;
 }
 
+// void print(std::ostream& os)
+// { } // C++11
+
+// template< typename T, typename... Ts> // Variadic Template Parameter
+// void print(std::ostream& os, T const& value, Ts const&... values) //Parameter Pack
+// {
+//     os << " " << value;
+//     print(os, values...); // Tail recursion (c++11)
+// }
+
+
 void print(std::ostream& os)
-{ }
+{ } // C++17
 
 template< typename T, typename... Ts> // Variadic Template Parameter
 void print(std::ostream& os, T const& value, Ts const&... values) //Parameter Pack
 {
     os << " " << value;
-    print(os, values...); // Tail recursion (c++11)
+    if constexpr(sizeof...(Ts) > 0U ){
+        print(os, values...); // Tail recursion (c++17)
+    }
 }
+
 #include <iostream>
 
 int main()
 {
+    print(std::cout);
     print(std::cout, 42);
     print(std::cout, "Hello\n");
 
