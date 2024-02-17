@@ -33,14 +33,20 @@ constexpr size_t dimensionof(T(&array)[N])
 
 
 //////////////////////////////////
-void print(std::ostream& os)
-{ } // C++17 (2)
-template< typename T, typename... Ts> // Variadic Template Parameter
-void print(std::ostream& os, T const& value, Ts const&... values) //Parameter Pack
+// void print(std::ostream& os)
+// { } // C++17 (3)
+template <typename T>
+void printWithSpace(std::ostream& os, T const& value)
 {
-    os << ' '  << value;
+    os << ' ' << value;
+}
 
-    (void)(os << ... << values ); //Fold expressions; C++17
+template< typename... Ts> // Variadic Template Parameter
+void print(std::ostream& os, Ts const&... values) //Parameter Pack
+{
+  //(void)(os << ... << values ); //Fold expressions; C++17
+  //( (os << ' ' << values), ...);
+  ( printWithSpace(os, values), ...);
 }
 
 #include <iostream>
@@ -48,7 +54,7 @@ void print(std::ostream& os, T const& value, Ts const&... values) //Parameter Pa
 int main()
 {
     print(std::cout);
-    print(std::cout, 42);
+    print(std::cout, 43);
     print(std::cout, "Hello\n");
 
     print(std::cout, 42, 3.14, '\n');
