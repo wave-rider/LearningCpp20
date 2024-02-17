@@ -17,23 +17,49 @@
 // }
 
 // Solution 2: constexpr C++17
-template<typename T1, typename T2>
-auto max(T1 const& a, T2 const& b)
-{
-    return (a < b ? b : a);
-}
+// template<typename T1, typename T2>
+// auto max(T1 const& a, T2 const& b)
+// {
+//     return (a < b ? b : a);
+// }
 
-template<typename T1, typename T2, typename... Ts>
-auto max(T1 const& a, T2 const& b, Ts const&... values)
+// template<typename T1, typename T2, typename... Ts>
+// auto max(T1 const& a, T2 const& b, Ts const&... values)
+// {
+//     if constexpr( sizeof...(Ts) > 0U ) {
+//         return max(max(a, b), values...);
+//     }
+//     else {
+//         return (a > b ? a : b);
+//     }
+// }
+
+// Solution 3. Tail recursion
+// template < typename T>
+// T  const& max(T const& a)
+// {
+//     return a;
+// }
+
+// template < typename T, typename... Ts>
+// auto  max(T const& a, Ts const&... values)
+// {
+//     auto const& b = max( values... );
+//     return (a < b ? b :a );
+// }
+
+// Solution 4. constexpr.
+template < typename T, typename... Ts>
+auto  max(T const& a, Ts const&... values)
 {
-    if constexpr( sizeof...(Ts) > 0U ) {
-        return max(max(a, b), values...);
+    if constexpr( sizeof...(Ts) == 0U ) {
+        return a;
     }
     else {
-        return (a > b ? a : b);
+        auto const& b = max( values... );
+        return (a < b ? b :a );
     }
 }
-
 int main()
 {
     std::cout << "Hello variadic World!\n";
