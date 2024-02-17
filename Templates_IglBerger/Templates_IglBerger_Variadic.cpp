@@ -60,6 +60,7 @@ auto  max(T const& a, Ts const&... values)
         return (a < b ? b :a );
     }
 }
+
 int main()
 {
     std::cout << "Hello variadic World!\n";
