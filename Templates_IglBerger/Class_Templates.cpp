@@ -42,12 +42,13 @@ class FixedVector
         {
             std::destroy(begin(), end());
         }
-        size_t size() const { return size_; }
+        size_t size() const;// { return size_; }
 
     using iterator = Type*;
     using const_iterator = Type const*;
 
-    iterator begin() { return data(); }
+    //iterator begin();// { return data(); }
+    auto begin() -> iterator;// alternatively
     const_iterator begin() const { return data(); }
     iterator end() { return data() + size_; }
     const_iterator end() const { return data() + size_; }
@@ -62,13 +63,15 @@ class FixedVector
         ++size_;
     }
 
-    //void push_back( Type&& value )
-    //{
-    //    checkSize(size_ + 1);
-    //    std::construct_at(end(), std::move(value));
-    //    ++size_;
-    //}
-    
+    void push_back( Type&& value )
+    {
+        checkSize(size_ + 1);
+        std::construct_at(end(), std::move(value));
+        ++size_;
+    }
+
+    template< typename... Args >
+    void emplace_back(Args&&... values);  
 };
 
 struct String
@@ -102,15 +105,15 @@ std::ostream& operator<<(std::ostream& os, NoDefaultCtr const& s)
     return os;
 }
 
-//template< typename Type, size_t Capacity >
-//size_t FixedVector<Type,Capacity>::size() const
-// { return size_; }
-//
-//template< typename Type, size_t Capacity >
-//auto FixedVector<Type, Capacity>::begin() -> iterator
-// { 
-//    return data(); 
-//}
+template< typename Type, size_t Capacity >
+size_t FixedVector<Type,Capacity>::size() const
+ { return size_; }
+
+template< typename Type, size_t Capacity >
+auto FixedVector<Type, Capacity>::begin() -> iterator
+ { 
+    return data(); 
+}
 
 
 template< typename Type, size_t Capacity >
@@ -123,6 +126,15 @@ std::ostream& operator<<(std::ostream& os,
     }
     os << " )";
     return os;
+}
+
+template< typename Type, size_t Capacity >
+template< typename... Args >
+void FixedVector<Type, Capacity>::emplace_back(Args&&... values)
+{
+    checkSize(size_ + 1);
+    std::construct_at(end(), std::forward<Args>(values)...);
+    ++size_;
 }
 
 int main()
