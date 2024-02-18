@@ -12,8 +12,8 @@ template  < typename Type, size_t Capacity >
 class FixedVector 
 {
     private:
-        std::array<Type, Capacity> buffer_;
-        //alignas(Type) std::array<std::byte,Capacity*sizeof(Type)> buffer_;
+        //std::array<Type, Capacity> buffer_;
+        alignas(Type) std::array<std::byte,Capacity*sizeof(Type)> buffer_;
         size_t size_{};
     void checkSize(size_t n)
     {
@@ -24,12 +24,18 @@ class FixedVector
     }
     public:
         FixedVector() = default;
-       /* explicit FixedVector(size_t size, Type const& value = Type{})
+        FixedVector(size_t size)
         : size_{size}
         {
             checkSize(size);
-            std::uninitialized_fill( begin(), end(), value);
-        }*/
+            std::uninitialized_fill( begin(), end(), Type{});
+        }
+        // explicit FixedVector(size_t size, Type const& value = Type{})
+        // : size_{size}
+        // {
+        //     checkSize(size);
+        //     std::uninitialized_fill( begin(), end(), value);
+        // }
         ~FixedVector()
         {
             std::destroy(begin(), end());
@@ -77,7 +83,7 @@ struct String
 
 std::ostream& operator<<(std::ostream& os, String const& s)
 {
-    os << s;
+    os << s.value.c_str();
     return os;
 }
 
@@ -97,8 +103,8 @@ std::ostream& operator<<(std::ostream& os,
     FixedVector<Type, Capacity> const& vector)
 {
     os << '(';
-    for (auto& element : vector) {
-        os << ' ' << element;
+    for (auto const& element : vector) {
+        os << " \'" << element << "\'";
     }
     os << " )";
     return os;
@@ -106,7 +112,7 @@ std::ostream& operator<<(std::ostream& os,
 
 int main()
 {
-    FixedVector<String, 5> v{};
+    FixedVector<String, 5> v{ 3 };
     std::cout << "\n" << v << "\n\n";
     return EXIT_SUCCESS;
 }
