@@ -24,18 +24,20 @@ class FixedVector
     }
     public:
         FixedVector() = default;
-        FixedVector(size_t size)
-        : size_{size}
-        {
-            checkSize(size);
-            std::uninitialized_fill( begin(), end(), Type{});
-        }
-        // explicit FixedVector(size_t size, Type const& value = Type{})
+        // This works with the String class
+        // that has a default ctr
+        // FixedVector(size_t size)
         // : size_{size}
         // {
         //     checkSize(size);
-        //     std::uninitialized_fill( begin(), end(), value);
+        //     std::uninitialized_fill( begin(), end(), Type{}/*default ctr*/);
         // }
+        explicit FixedVector(size_t size, Type const& value=Type{})
+        : size_{size}
+        {
+            checkSize(size);
+            std::uninitialized_fill( begin(), end(), value);
+        }
         ~FixedVector()
         {
             std::destroy(begin(), end());
@@ -87,6 +89,19 @@ std::ostream& operator<<(std::ostream& os, String const& s)
     return os;
 }
 
+struct NoDefaultCtr
+{
+    std::string message;
+    NoDefaultCtr() = delete;
+    NoDefaultCtr(const std::string& m) : message(m){}
+};
+
+std::ostream& operator<<(std::ostream& os, NoDefaultCtr const& s)
+{
+    os << s.message.c_str();
+    return os;
+}
+
 //template< typename Type, size_t Capacity >
 //size_t FixedVector<Type,Capacity>::size() const
 // { return size_; }
@@ -111,8 +126,9 @@ std::ostream& operator<<(std::ostream& os,
 }
 
 int main()
-{
-    FixedVector<String, 5> v{ 3 };
+{   NoDefaultCtr def("Hello!");
+    //FixedVector<NoDefaultCtr,5 > v { 5, def };
+    FixedVector<String,5 > v { 5 };
     std::cout << "\n" << v << "\n\n";
     return EXIT_SUCCESS;
 }
