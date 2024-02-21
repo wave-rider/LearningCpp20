@@ -1,4 +1,4 @@
-#include <iostream>>
+#include <iostream>
 struct Test{
 
   Test( int j) : i{j}
@@ -26,8 +26,10 @@ class unique_ptr
 
     explicit unique_ptr(pointer ptr):ptr_{ptr}{}
     ~unique_ptr() { delete ptr_; }
+    T& operator*() const { return *ptr_; }
+    
     private:
-    pointer ptr_;
+        pointer ptr_;
 };
 
 template< typename T >
@@ -38,6 +40,7 @@ class unique_ptr<T[]> // Partial template specialization
 
     explicit unique_ptr(pointer ptr):ptr_{ptr}{}
     ~unique_ptr() { delete[] ptr_; }
+    T& operator[](size_t index) const {return ptr_[index];}
     private:
     pointer ptr_;
 };
@@ -45,6 +48,8 @@ class unique_ptr<T[]> // Partial template specialization
 int main()
 {
     unique_ptr<Test> ptr{ new Test{42}};
+    std::cout << "*ptr = " << *ptr << "\n";
 
     unique_ptr<Test[]> ptr2{ new Test[3]{1,2,3}};
+    std::cout << "ptr2[1] = " << ptr2[1] << "\n";
 }
