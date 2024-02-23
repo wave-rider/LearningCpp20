@@ -6,6 +6,7 @@ https://ptgmedia.pearsoncmg.com/imprint_downloads/informit/aw/meyerscddemo/demo/
 Mentioned in https://www.oreilly.com/library/view/exceptional-c-47/0201615622/
 
 https://www.artima.com/articles/the-most-important-c-non-book-publicationsemeverem
+https://www.reddit.com/r/cpp/comments/116i1d8/software_architecture_with_c_by_adrian_ostrowski/
 
 # 18-Jan-2024
 Shared pointers
