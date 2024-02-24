@@ -219,6 +219,6 @@ HelloWorld/VS2015/HelloWorld/HelloWorld.VC.db
 *.db
 packages
 .vs
-/*/*.exe
+/**/*.exe
 Templates_IglBerger/specializations
 Templates_IglBerger/specializations.dSYM/Contents/Resources/DWARF/specializations
