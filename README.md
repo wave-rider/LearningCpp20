@@ -8,6 +8,9 @@ Mentioned in https://www.oreilly.com/library/view/exceptional-c-47/0201615622/
 https://www.artima.com/articles/the-most-important-c-non-book-publicationsemeverem
 https://www.reddit.com/r/cpp/comments/116i1d8/software_architecture_with_c_by_adrian_ostrowski/
 
+Set up the vscode to run C++20
+https://stackoverflow.com/questions/62100553/how-do-i-use-c20-in-vscode/71883893#71883893
+
 # 18-Jan-2024
 Shared pointers
 https://www.youtube.com/watch?v=u_FEZDfBPk8
