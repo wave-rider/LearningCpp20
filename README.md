@@ -1,3 +1,6 @@
+# 16-July-2024
+Learn c++ by Example Book
+
 # 31-Mar-2024
 Embrace Modern Technology: Using HTML 5 for GUI in C++ - Borislav Stanimirov - CppCon 2019
 https://www.youtube.com/watch?v=bbbcZd4cuxg
