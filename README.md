@@ -1,6 +1,5 @@
 # 21-July-2024
-how Google writes gorgeous C++
-https://www.youtube.com/watch?v=6lU11IHfJgo  
+[how Google writes gorgeous C++](https://www.youtube.com/watch?v=6lU11IHfJgo)  
 
 # 16-July-2024
 Learn c++ by Example Book
