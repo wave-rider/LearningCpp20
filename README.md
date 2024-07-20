@@ -1,3 +1,7 @@
+# 21-July-2024
+how Google writes gorgeous C++
+https://www.youtube.com/watch?v=6lU11IHfJgo  
+
 # 16-July-2024
 Learn c++ by Example Book
 
@@ -29,3 +33,4 @@ Shared pointers
 https://www.youtube.com/watch?v=u_FEZDfBPk8
 
 # LearningCpp
+https://www.youtube.com/watch?v=6lU11IHfJgo
