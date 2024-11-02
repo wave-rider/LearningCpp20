@@ -222,3 +222,10 @@ packages
 /**/*.exe
 Templates_IglBerger/specializations
 Templates_IglBerger/specializations.dSYM/Contents/Resources/DWARF/specializations
+/**/ALL_BUILD.vcxproj
+/**/ALL_BUILD.vcxproj.filters
+/**/CMakeCache.txt
+/**/CMakeFiles
+/**/cmake_install.cmake
+
+
