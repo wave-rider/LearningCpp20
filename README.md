@@ -1,3 +1,15 @@
+# 5-Jan-2025
+C++ Design patterns books
+
+[Hands On Design Patterns with C++](https://github.com/wave-rider/Hands-On-Design-Patterns-with-CPP-Second-Edition)
+
+[Game Development Patterns with Unreal Engine 5](https://github.com/wave-rider/Game-Development-Patterns-with-Unreal-Engine-5)
+
+[C++ software design](https://github.com/wave-rider/cpp_software_design)
+
+[Desing Patterns modern c++ 20](https://github.com/wave-rider/design-patterns-modern-cpp20)
+
+
 # 21-July-2024
 [how Google writes gorgeous C++](https://www.youtube.com/watch?v=6lU11IHfJgo)  
 
